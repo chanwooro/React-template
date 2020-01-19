@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 // Functional component = No own states.
 function InputBlock({initVal, onChange, name}){
     // first arg is always variable and second one is always setter method
-    const [val, setInputVal] = useState(initVal);
+    const [val, setInputVal] = useState(initVal || '');
 
     function inputChange(event){
         // this.setState({ value: event.target.value })
