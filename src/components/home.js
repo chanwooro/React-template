@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import InputBlock from './blocks/input';
 
-class Home extends React.Component {
+class Home extends Component {
   constructor(props){
     super(props);
     this.state = {

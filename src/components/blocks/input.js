@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
+
+// Functional component is plain javascript function so cannot use setState()
+// Means functional components are used for components that do not require states.
+// Functional component = No own states.
 function InputBlock({initVal, onChange, name}){
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         value: ''
-    //     }
-
-    //     this.inputChange = this.inputChange.bind(this);
-    // }
+    // first arg is always variable and second one is always setter method
+    const [val, setInputVal] = useState("");
 
     function inputChange(event){
         // this.setState({ value: event.target.value })
         // this.props.onChange(event.target.value)
-        onChange(event.target)
+        setInputVal(event.target.value);
+        onChange(event.target);
     }
 
 
