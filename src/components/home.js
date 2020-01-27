@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputBlock from './blocks/input';
 import SelectBlock from './blocks/select';
+import ButtonBlock from './blocks/button';
 
 class Home extends Component {
   constructor(props){
@@ -29,6 +30,13 @@ class Home extends Component {
   inputChange = (val) => { 
     this.setState({[val.name]: val.value})
   }
+  componentDidMount(){
+    console.log(this.state.options);
+  }
+
+  buttonClick = (val) => {
+    console.log("Button Click")
+  }
 
   render() {
     return (
@@ -37,6 +45,7 @@ class Home extends Component {
         <InputBlock onChange={this.inputChange} name="first_name" initVal="test" />
         <InputBlock onChange={this.inputChange} name="last_name" />
         <SelectBlock onChange={this.inputChange} options={this.state.options} name="select" initVal="a" placeholder="Select option"/>
+        <ButtonBlock name="button" buttonText="Test Button" onClick={this.buttonClick} initState="idle" />
       </div>
     )
   }

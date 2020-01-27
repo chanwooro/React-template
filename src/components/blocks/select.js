@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function selectBlock({ initVal, onChange, name, options, placeholder}){
+function SelectBlock({ initVal, onChange, name, options, placeholder}){
     const [val, setValue] = useState(initVal || '');
     
     const listOptions = options.map((item, key) => {
@@ -23,4 +23,4 @@ function selectBlock({ initVal, onChange, name, options, placeholder}){
     )
 }
 
-export default selectBlock;
+export default SelectBlock;
